@@ -14,7 +14,7 @@
 
 <body>
   <div class="container" id="homePage">
-    <h5 class="center">Cryotherapy Success Rate Prediction</h5>
+    <h4 class="center">Cryotherapy Success Rate Prediction</h4>
     <div class="input-field" id="forminput">
       <div class="row">
         <div class="col s12 m6 l6">
@@ -37,13 +37,13 @@
       <div class="row">
         <div class="col s12 m6 l6">
           <label for="time">
-            Time
+            Time elapsed before starting treatment (months)
           </label>
           <input type="text" name="time" id="time" required>
         </div>
         <div class="col s12 m6 l6">
           <label for="wartz">
-            Number of Wartz
+            Number of Wartz (count)
           </label>
           <input type="text" name="wartz" id="wartz" required>
         </div>
@@ -51,24 +51,26 @@
       <div class="row">
         <div class="col s12 m6 l6">
           <label for="type">
-            Type
+            Type of Wartz
           </label>
           <select id="type" class="browser-default" required>
             <option value="" disabled selected>Choose your option</option>
-            <option value="1">Type-1</option>
-            <option value="2">Type-2</option>
-            <option value="3">Type-3</option>
+            <option value="1">Type-1 (Common)</option>
+            <option value="2">Type-2 (Plantar)</option>
+            <option value="3">Type-3 (Both)</option>
           </select>
         </div>
         <div class="col s12 m6 l6">
           <label for="area">
-            Area
+            Surface area of the largest wartz (mm²)
           </label>
           <input type="text" name="area" id="area" required>
         </div>
       </div>
     </div>
+    <p class="center-align">
     <a class="waves-effect waves-light btn" onclick="show()">Check</a>
+    </p>
   </div>
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -76,12 +78,12 @@
   <script src="src/js/app.js"></script>
   <script>
     function show(){
-      let sexv = parseFloat(document.getElementById("sex").value)
-      let agev = parseFloat(document.getElementById("age").value)
-      let timev = parseFloat(document.getElementById("time").value)
-      let wartzv = parseFloat(document.getElementById("wartz").value)
-      let typev = parseFloat(document.getElementById("type").value)
-      let areav = parseFloat(document.getElementById("area").value)
+      let sexv = document.getElementById("sex").value
+      let agev = document.getElementById("age").value
+      let timev = document.getElementById("time").value
+      let wartzv = document.getElementById("wartz").value
+      let typev = document.getElementById("type").value
+      let areav = document.getElementById("area").value
 
       if(sexv==''||agev==''||timev==''||wartzv==''||typev==''||areav=='')
         return M.toast({html: 'Please Enter all the values'})
