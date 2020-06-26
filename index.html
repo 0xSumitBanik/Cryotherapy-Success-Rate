@@ -76,14 +76,16 @@
   <script src="src/js/app.js"></script>
   <script>
     function show(){
-      let sexv = document.getElementById("sex").value
-      let agev = document.getElementById("age").value
-      let timev = document.getElementById("time").value
-      let wartzv = document.getElementById("wartz").value
-      let typev = document.getElementById("type").value
-      let areav = document.getElementById("area").value
+      let sexv = parseFloat(document.getElementById("sex").value)
+      let agev = parseFloat(document.getElementById("age").value)
+      let timev = parseFloat(document.getElementById("time").value)
+      let wartzv = parseFloat(document.getElementById("wartz").value)
+      let typev = parseFloat(document.getElementById("type").value)
+      let areav = parseFloat(document.getElementById("area").value)
+
       if(sexv==''||agev==''||timev==''||wartzv==''||typev==''||areav=='')
         return M.toast({html: 'Please Enter all the values'})
+
       let object_to_predict = {
         sex: sexv,
         age: agev,
